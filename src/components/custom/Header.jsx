@@ -139,6 +139,7 @@ const Header = () => {
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent>
           <DialogHeader>
+          <DialogTitle>Sign In</DialogTitle> 
             <DialogDescription className="flex flex-col items-center gap-4 text-center">
               <img src="/logomain2.jpg" alt="Logo" className="h-12" />
               <h2 className="font-bold text-xl mt-2">Welcome Back</h2>
