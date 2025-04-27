@@ -241,11 +241,11 @@ function CreateTrip() {
       </motion.div>
 
       {/* Dialog */}
-      <Dialog open={openDialog}>
+      <Dialog open={openDialog} onOpenChange = {setOpenDialog}>
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
-              <img src="/logomain2.jpg" alt="Logo" />
+              <img src="/main_logo1.jpg" alt="Logo" />
               <h2 className="font-bold text-lg mt-7">Sign In With Google 🔑</h2>
               <p>Sign in to the App with Google authentication</p>
               <Button

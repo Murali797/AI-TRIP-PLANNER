@@ -129,7 +129,7 @@ const Header = () => {
           <motion.div whileTap={{ scale: 0.95 }}>
             <Button
               onClick={() => setOpenDialog(true)}
-              className="bg-violet-600 text-white rounded-full hover:bg-violet-700 transition"
+              className="bg-violet-600 text-white rounded-full hover:bg-violet-700 transition cursor-pointer"
             >
               Sign In
             </Button>
