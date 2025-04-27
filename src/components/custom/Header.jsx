@@ -74,7 +74,7 @@ const Header = () => {
         <motion.img
           whileHover={{ scale: 1.05, rotate: 2 }}
           transition={{ type: 'spring', stiffness: 300 }}
-          src="/logomain2.jpg"
+          src="/main_logo1.jpg"
           alt="Logo"
           className="h-10 sm:h-12 w-auto object-contain"
         />
