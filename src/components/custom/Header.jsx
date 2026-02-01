@@ -20,7 +20,16 @@ import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 
 const Header = () => {
-  const user = JSON.parse(localStorage.getItem('user'))
+  let user = null
+  try {
+    const storedUser = localStorage.getItem("user")
+    user = storedUser ? JSON.parse(storedUser) : null
+  } catch (e) {
+    console.error("Invalid user in localStorage", e)
+    localStorage.removeItem("user")
+    user = null
+  }
+
   const [openDialog, setOpenDialog] = useState(false)
   const [clicks, setClicks] = useState(0)
 
@@ -100,15 +109,17 @@ const Header = () => {
             </motion.a>
 
             <Popover>
-              <PopoverTrigger>
-                <motion.img
-                  whileHover={{ rotate: 10 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setClicks(prev => prev + 1)}
-                  src={user?.picture}
-                  alt="User Avatar"
-                  className="h-9 w-9 rounded-full hover:ring-2 hover:ring-violet-500 transition"
-                />
+              <PopoverTrigger asChild>
+                <button>
+                  <motion.img
+                    whileHover={{ rotate: 10 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setClicks(prev => prev + 1)}
+                    src={user?.picture || "/default-avatar.png"}
+                    alt="User Avatar"
+                    className="h-9 w-9 rounded-full hover:ring-2 hover:ring-violet-500 transition"
+                  />
+                </button>
               </PopoverTrigger>
               <PopoverContent className="w-32 p-2 text-center text-sm">
                 <p

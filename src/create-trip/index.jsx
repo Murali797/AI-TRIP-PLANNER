@@ -73,6 +73,7 @@ function CreateTrip() {
       const tripJson = JSON.parse(rawText);
       await SaveAiTrip(tripJson);
     } catch (err) {
+      console.error("Generate Trip Error:",err);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
